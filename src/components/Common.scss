@@ -1,0 +1,422 @@
+.auth-main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.list-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  // background-color: #70abc3;
+  background-color: rgb(41, 47, 76);
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  img {
+    width: 2.4rem;
+    height: 2.4rem;
+    border: 1.5px solid #fff;
+    border-radius: 50%;
+    padding: 2px;
+    cursor: pointer;
+  }
+}
+
+// Items
+
+.main-container {
+  margin-bottom: 4.3rem;
+  padding: 1rem 0;
+  display: grid;
+  gap: 1rem;
+
+  .todo-items-main-div {
+    width: 24rem;
+    margin: auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 1px 8px 2px #d3d3d3;
+    position: relative;
+    background-color: rgb(121, 126, 147);
+
+    .text-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .pin {
+        width: 1.1rem;
+        position: absolute;
+        right: 15px;
+        top: 2px;
+        cursor: pointer;
+        rotate: -45deg;
+      }
+
+      .neutral-position {
+        rotate: 0deg;
+      }
+
+      .content-div {
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
+
+        .title {
+          font-size: 0.9rem;
+          font-weight: 600;
+          margin-bottom: 3px;
+        }
+
+        .discription {
+          font-size: 0.8rem;
+        }
+      }
+    }
+    .icons-div {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      img {
+        width: 1.1rem;
+        cursor: pointer;
+      }
+    }
+
+    .item-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 9px 0 4px 0;
+
+      .date-prio-div {
+        display: flex;
+        background-color: green;
+        padding: 6px 13px;
+        border-radius: 11px;
+
+        span {
+          font-size: 14px;
+          color: #fff;
+        }
+      }
+    }
+
+    .date-div {
+      display: flex;
+      justify-content: space-between;
+
+      div span {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+// Profile Modal
+
+.profile-main-div {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 99;
+  background-color: #00000057;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .profile-modal {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 20rem;
+    height: 15rem;
+    position: relative;
+
+    .close {
+      width: 1.4rem;
+      height: 1.4rem;
+      position: absolute;
+      right: 1.125rem;
+      background-color: lightgray;
+      border-radius: 50%;
+      padding: 5px;
+      cursor: pointer;
+    }
+
+    .avatar {
+      width: 3.9rem;
+      height: 3.9rem;
+      display: block;
+      margin: auto;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    h3 {
+      text-align: center;
+      margin-top: 0.8rem;
+    }
+
+    .email,
+    .password {
+      margin-left: 2rem;
+    }
+
+    .email {
+      margin-top: 1rem;
+    }
+
+    button {
+      color: #fff;
+      border: 2px solid #70abc3;
+      background-color: #70abc3;
+      border-radius: 0.25rem;
+      padding: 0.4rem 1rem;
+      border: none;
+      cursor: pointer;
+      display: block;
+      margin: auto;
+      margin-top: 1rem;
+    }
+  }
+}
+
+// Side bar
+
+.side-bar-main-div {
+  background-color: rgb(24, 27, 52);
+  height: calc(100vh - 79.197px);
+  border-top-right-radius: 1.5rem;
+  position: fixed;
+  width: 20%;
+  padding-left: 1.5rem;
+  padding-top: 3rem;
+
+  .filter,
+  a {
+    position: relative;
+    color: #fff;
+    display: block;
+    // background-color: rgb(41, 47, 76);
+    text-decoration: none;
+    padding: 9px 13px;
+    border-bottom-left-radius: 2rem;
+    border-start-start-radius: 2rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+
+  .active {
+    background-color: rgb(41, 47, 76);
+  }
+
+  .filter-by::before,
+  .active::before {
+    content: '';
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+    top: -30px;
+    border-radius: 50%;
+    box-shadow: 13px 13px 0 rgb(41, 47, 76);
+  }
+
+  .filter-by::after,
+  .active::after {
+    content: '';
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+    bottom: -30px;
+    border-radius: 50%;
+    box-shadow: 14px -15px 0 rgb(41, 47, 76);
+  }
+
+  .filter {
+    cursor: context-menu;
+    padding-right: 0 !important;
+    position: relative;
+    z-index: 11;
+
+    span {
+      cursor: pointer;
+      display: block;
+    }
+
+    .filter-by {
+      border-bottom-left-radius: 1rem;
+      border-start-start-radius: 1rem;
+      padding: 0.3rem;
+      margin-top: 10px;
+      background-color: rgb(41, 47, 76);
+      margin-left: 0.5rem;
+
+      &::after {
+        bottom: -21px !important;
+      }
+
+      &::before {
+        top: 13px !important;
+      }
+
+      .by-priority,
+      .by-date {
+        margin-top: 0.5rem;
+        margin-left: 0.5rem;
+
+        span {
+          display: block;
+          margin-bottom: 5px;
+        }
+
+        label {
+          display: block;
+          margin: 3px 0 3px 0.5rem;
+          cursor: pointer;
+
+          input {
+            margin-right: 8px;
+          }
+        }
+      }
+
+      button {
+        margin: 0.5rem;
+        background-color: #0073ea;
+        color: #fff;
+        padding: 4px 1rem;
+        border: none;
+        cursor: pointer;
+        border-radius: 2rem;
+      }
+    }
+  }
+
+  .logout {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #fff;
+    cursor: pointer;
+    width: fit-content;
+    margin: auto;
+
+    img {
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+  }
+}
+
+// Task Modal
+
+.task-modal-main-div {
+  display: grid;
+  width: 30rem;
+  box-shadow: 0px 1px 8px 2px #d3d3d3;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  margin: auto;
+  margin-top: 1rem;
+
+  input,
+  textarea {
+    padding: 0.25rem;
+    outline: none;
+    border: 2px solid #70abc3;
+    border-radius: 0.25rem;
+  }
+
+  .content-txt {
+    margin-top: 8px;
+  }
+
+  .priority-date-div {
+    display: flex;
+    justify-content: space-between;
+
+    .priority-div {
+      margin-top: 0.5rem;
+
+      label:nth-child(1) {
+        display: block;
+      }
+
+      .first-input {
+        margin-left: 0 !important;
+      }
+
+      input {
+        margin-right: 0.25rem;
+        margin-left: 0.8rem;
+      }
+    }
+
+    .due-date-label {
+      display: block;
+
+      .react-datepicker__input-container input {
+        width: 10rem;
+      }
+    }
+  }
+
+  .btn-div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.8rem;
+
+    .close {
+      border: 2px solid;
+      color: #70abc3 !important;
+      background-color: #fff !important;
+    }
+
+    button {
+      color: #fff;
+      border: 2px solid #70abc3;
+      background-color: #70abc3;
+      border-radius: 0.25rem;
+      padding: 0.4rem 1rem;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}
+
+.react-datepicker-popper {
+  transform: translate3d(462px, -0.333px, 2px) !important;
+}
+
+.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle::after {
+  position: static !important;
+}
+
+
+@media only screen and (max-width: 930px) {
+  .side-bar-main-div {
+    width: 29%;
+  }
+}

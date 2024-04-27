@@ -1,0 +1,11 @@
+*,*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cursive;
+}
+.main-body {
+  background-color: rgb(41, 47, 76);
+  height: 100vh;
+}
